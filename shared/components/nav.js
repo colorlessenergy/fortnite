@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -5,6 +6,11 @@ import epicGamesLogo from '/public/assets/epic-games-logo.png';
 import fortniteLogo from '/public/assets/fortnite-logo.png';
 
 const Nav = () => {
+    const [ isHamburgerMenuOpen, setIsHamburgerMenuOpen ] = useState(false);
+    const handleHamburgerMenuClick = () => {
+        setIsHamburgerMenuOpen(previousIsHamburgerMenuOpen => !previousIsHamburgerMenuOpen);
+    }
+
     return (
         <nav className="nav flex align-items-center justify-content-between pl-2">
             <div>
@@ -38,7 +44,9 @@ const Nav = () => {
                     </a>
                 </Link>
 
-                <svg className="px-1 hamburger-menu">
+                <svg
+                    onClick={ handleHamburgerMenuClick }
+                    className={`${ isHamburgerMenuOpen ? "animate-hamburger-menu" : "" } px-1 hamburger-menu`}>
                     <rect className="hamburger-menu__rectangle" />
                     <rect className="hamburger-menu__rectangle" />
                     <rect className="hamburger-menu__rectangle" />
