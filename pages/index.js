@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Nav from '../shared/components/nav';
+import Nav from '../shared/components/Nav';
 
 export default function Home () {
     return (
