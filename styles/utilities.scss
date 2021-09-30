@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+.flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.ml-2 {
+    margin-left: $space-medium;
+}
+
+.px-1 {
+    padding-left: $space-small;
+    padding-right: $space-small;
+}
+
+.pl-2 {
+    padding-left: $space-medium;
+}
+
+.h-100 {
+    height: 100%;
+}
