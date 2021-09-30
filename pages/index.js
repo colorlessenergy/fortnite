@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import Nav from '../shared/components/nav';
+
 export default function Home () {
     return (
         <div>
@@ -10,9 +12,7 @@ export default function Home () {
             </Head>
 
             <div>
-                <h1>
-                    fortnite
-                </h1>
+                <Nav />
             </div>
         </div>
     );
