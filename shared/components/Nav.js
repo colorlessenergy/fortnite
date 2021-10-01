@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import NavMenu from './NavMenu';
+
 import epicGamesLogo from '/public/assets/epic-games-logo.png';
 import fortniteLogo from '/public/assets/fortnite-logo.png';
 
@@ -52,6 +54,8 @@ const Nav = () => {
                     <rect className="hamburger-menu__rectangle" />
                 </svg> 
             </div>
+			
+			<NavMenu />
         </nav>
     );
 }
