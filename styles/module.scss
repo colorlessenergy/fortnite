@@ -76,6 +76,22 @@
 	transition: .2s transform ease-in-out;
 }
 
+.nav-menu--inner {
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.nav-menu__title {
+	background-color: $black-4;
+	color: $light-gray-2;
+}
+
+.nav-menu__title i {
+	color: $light-gray-2;
+	font-size: 18px;
+}
+
 .nav-menu-animate {
 	transform: translateX(0);
 }
