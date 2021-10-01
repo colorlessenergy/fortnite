@@ -1,6 +1,6 @@
-const NavMenu = () => {
+const NavMenu = ({ isNavMenuOpen }) => {
 	return (
-		<div className="nav-menu">
+		<div className={`nav-menu ${ isNavMenuOpen ? ("nav-menu-animate") : ("") }`}>
 			<ul className="flex-1">
 				<li>
 					<a className="text text-uppercase text-gray py-1 px-3 nav-menu__item" href="/">
@@ -21,7 +21,7 @@ const NavMenu = () => {
 				<input className="nav-menu__input p-1" type="text" autoComplete="off" placeholder="Search..." />
 
 				<button className="nav-menu__button">
-					<i class="las la-search"></i>
+					<i className="las la-search"></i>
 				</button>
 			</form>
 

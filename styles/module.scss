@@ -71,6 +71,12 @@
 	top: 60px;
 
 	background-color: $black;
+	transform: translateX(800px);
+	transition: .2s transform ease-in-out;
+}
+
+.nav-menu-animate {
+	transform: translateX(0);
 }
 
 .nav-menu__item {

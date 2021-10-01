@@ -49,13 +49,13 @@ const Nav = () => {
                 <svg
                     onClick={ handleHamburgerMenuClick }
                     className={`${ isHamburgerMenuOpen ? "animate-hamburger-menu" : "" } px-1 hamburger-menu`}>
-                    <rect className="hamburger-menu__rectangle" />
-                    <rect className="hamburger-menu__rectangle" />
-                    <rect className="hamburger-menu__rectangle" />
+                    <rect className="hamburger-menu__rectangle"></rect>
+                    <rect className="hamburger-menu__rectangle"></rect>
+                    <rect className="hamburger-menu__rectangle"></rect>
                 </svg> 
             </div>
-			
-			<NavMenu />
+
+			<NavMenu isNavMenuOpen={ isHamburgerMenuOpen } />
         </nav>
     );
 }
