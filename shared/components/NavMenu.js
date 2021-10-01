@@ -1,14 +1,26 @@
+import { useState } from "react";
+
 const NavMenu = ({ isNavMenuOpen }) => {
+	const [ isNavMenuInnerOpen, setIsNavMenuInnerOpen ] = useState(false);
+	const toggleNavMenuInner = () => {
+		setIsNavMenuInnerOpen(previousIsNavMenuInnerOpen => !previousIsNavMenuInnerOpen);
+	}
+
 	return (
 		<div className={`nav-menu ${ isNavMenuOpen ? ("nav-menu-animate") : ("") }`}>
 			<ul className="flex-1">
-				<li>
-					<a className="text text-uppercase text-gray py-1 px-3 nav-menu__item" href="/">
+				<li
+					onClick={ toggleNavMenuInner } 
+					className="text cursor-pointer text-uppercase text-gray py-1 px-3 nav-menu__item flex align-items-center">
+					<div className="flex-1 flex">
 						modes
-					</a>
+					</div>
+					<i className="las la-angle-right"></i>
 				</li>
 				<li>
-					<a className="text text-uppercase text-gray py-1 px-3 nav-menu__item" href="/">
+					<a
+						className="text text-uppercase text-gray py-1 px-3 nav-menu__item" 
+						href="/">
 						battle pass
 					</a>
 				</li>
@@ -44,26 +56,34 @@ const NavMenu = ({ isNavMenuOpen }) => {
 				</div>
 			</div>
 
-			<div className="nav-menu nav-menu--inner nav-menu-animate">
-				<div className="nav-menu__title cursor-pointer text-uppercase px-3 py-1 flex">
-					<i class="las la-angle-left"></i>
+			<div className={`nav-menu nav-menu--inner ${ isNavMenuInnerOpen ? ("nav-menu-animate") : ("") }`}>
+				<div
+					onClick={ toggleNavMenuInner }
+					className="nav-menu__title cursor-pointer text-uppercase px-3 py-1 flex align-items-center">
+					<i className="las la-angle-left"></i>
 					<div className="flex-1 text-medium flex align-items-center justify-content-center">
 						modes
 					</div>
 				</div>
 				<ul className="flex-1">
 					<li>
-						<a className="text text-uppercase text-gray py-1 px-3 nav-menu__item" href="/">
+						<a
+							className="text text-uppercase text-gray py-1 px-3 nav-menu__item"
+							href="/">
 							battle royale
 						</a>
 					</li>
 					<li>
-						<a className="text text-uppercase text-gray py-1 px-3 nav-menu__item" href="/">
+						<a
+							className="text text-uppercase text-gray py-1 px-3 nav-menu__item"
+							href="/">
 							creative
 						</a>
 					</li>
 					<li>
-						<a className="text text-uppercase text-gray py-1 px-3 nav-menu__item" href="/">
+						<a
+							className="text text-uppercase text-gray py-1 px-3 nav-menu__item"
+							href="/">
 							save the world
 						</a>
 					</li>
