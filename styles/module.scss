@@ -3,60 +3,125 @@
 .nav {
     background-color: $black;
 
-    height: 60px;
+	height: 60px;
 }
 
 .download-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 20px;
 
-    background-color: $yellow;
-    font-family: Helvetica, sans-serif;
-    font-size: 9px;
-    text-transform: uppercase;
+	background-color: $yellow;
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	text-transform: uppercase;
 }
 
 .hamburger-menu {
-    height: 100%;
-    width: 50px;
+	height: 100%;
+	width: 50px;
 
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .hamburger-menu__rectangle {
-    height: 2px;
-    width: 100%;
-    position: absolute;
+	height: 2px;
+	width: 100%;
+	position: absolute;
 
-    fill: $light-gray;
-    transition: 0.1s transform ease-in-out;
+	fill: $light-gray;
+	transition: 0.1s transform ease-in-out;
 }
 
 .hamburger-menu__rectangle:nth-of-type(1) {
-    transform: translateY(23px);
+	transform: translateY(23px);
 }
 
 .hamburger-menu__rectangle:nth-child(2) {
-    transform: translateY(30px);
+	transform: translateY(30px);
 
-    transition: 0.1s opacity ease-in-out;
+	transition: 0.1s opacity ease-in-out;
 }
 
 .hamburger-menu__rectangle:nth-of-type(3) {
-    transform: translateY(37px);
+	transform: translateY(37px);
 }
 
 .animate-hamburger-menu .hamburger-menu__rectangle:nth-of-type(1) {
-    transform: translate(5px, 40px) rotate(-45deg);
+	transform: translate(5px, 40px) rotate(-45deg);
 }
 
 .animate-hamburger-menu .hamburger-menu__rectangle:nth-child(2) {
-    opacity: 0;
+	opacity: 0;
 }
 
 .animate-hamburger-menu .hamburger-menu__rectangle:nth-of-type(3) {
-    transform: translate(5px, 17px) rotate(45deg);
+	transform: translate(5px, 17px) rotate(45deg);
+}
+
+.nav-menu {
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 60px);
+	width: 90%;
+	position: absolute;
+	right: 0;
+	top: 60px;
+
+	background-color: $black;
+}
+
+.nav-menu__item {
+	display: block;
+
+	border-bottom: 1px solid $dark-gray;
+}
+
+.nav-menu__form {
+	min-height: 72px;
+
+	background-color: $black-2;
+}
+
+.nav-menu__input {
+	border: 1px solid $black-3;
+	border-right: 0;
+	border-radius: 2px;
+	width: 75%;
+
+	background-color: #393939;
+	color: $gray;
+}
+
+.nav-menu__button {
+	border: 1px solid #464646;
+	border-left: 0;
+	border-radius: 2px;
+	height: 39px;
+	width: 15%;
+
+	background-color: #393939;
+}
+
+.nav-menu__button i {
+	transform: rotate(-90deg);
+}
+
+.nav-menu__sign-in {
+	border-right: 1px solid $black-3;
+	width: 70%;
+}
+
+.user-status {
+	border: 2px solid $gray;
+	border-radius: 50%;
+	height: 10px;
+	width: 10px;
+	position: absolute;
+	bottom: 2px;
+	left: 16px;
+
+	background-color: $black;
 }
