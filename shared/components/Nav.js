@@ -56,6 +56,11 @@ const Nav = () => {
         setIsHamburgerMenuOpen(previousIsHamburgerMenuOpen => !previousIsHamburgerMenuOpen);
     }
 
+    const [ isSearching, setIsSearching ] = useState(false);
+    const toggleIsSearching = () => {
+        setIsSearching(previousIsSearching => !previousIsSearching);
+    }
+
     return (
         <nav className="nav flex align-items-center justify-content-between pl-2">
             <div className="flex align-items-center h-100">
@@ -81,37 +86,66 @@ const Nav = () => {
                     </a>
                 </Link>
 
-                <ul className="nav-links-desktop ml-2 h-100">
-                    <li className="nav-link-desktop position-relative">
-                        <div className="text-small cursor-pointer text-uppercase text-gray py-1 px-2 h-100 flex justify-content-center align-items-center">
-                            modes
-                        </div>
-                        <div className="yellow-rectangle"></div>
-                    </li>
-                    { links.map(link => {
-                        return (
-                            <li
-                                key={ link.id }
-                                className="nav-link-desktop position-relative">
-                                <a
-                                    className="text-small text-uppercase text-gray py-1 px-2 h-100 flex justify-content-center align-items-center" 
-                                    href={ link.link }>
-                                    { link.text }
-                                </a>
-                                <div className="yellow-rectangle"></div>
-                            </li>
-                        );
-                    }) }
-                </ul>
+                { isSearching === false ? (
+                    <ul className="nav-links-desktop ml-2 h-100">
+                        <li className="nav-link-desktop position-relative">
+                            <div className="text-small cursor-pointer text-uppercase text-gray py-1 px-2 h-100 flex justify-content-center align-items-center">
+                                modes
+                            </div>
+                            <div className="yellow-rectangle"></div>
+                        </li>
+                        { links.map(link => {
+                            return (
+                                <li
+                                    key={ link.id }
+                                    className="nav-link-desktop position-relative">
+                                    <a
+                                        className="text-small text-uppercase text-gray py-1 px-2 h-100 flex justify-content-center align-items-center" 
+                                        href={ link.link }>
+                                        { link.text }
+                                    </a>
+                                    <div className="yellow-rectangle"></div>
+                                </li>
+                            );
+                        }) }
+                    </ul>
+                ) : (null) }
             </div>
 
             <div className="flex h-100">
-                <div className="nav-links-desktop">
-                    <div className="flex justify-content-center align-items-center cursor-pointer hover-rectangle position-relative px-1">
-                        <i className="las la-search rotate-90deg"></i>
+                { isSearching ? (
+                    <form className="flex align-items-center justify-content-center">
+                        <label className="d-none" htmlFor="search">
+                            search
+                        </label>
+                        <input
+                            className="nav-menu__input p-1"
+                            type="text"
+                            autoComplete="off"
+                            placeholder="Search..." />
 
-                        <div className="yellow-rectangle"></div>
-                    </div>
+                        <button className="nav-menu__button">
+                            <i className="las la-search text-light-gray text-large rotate-90deg"></i>
+                        </button>
+
+                        <button
+                            type="button"
+                            onClick={ toggleIsSearching }
+                            className="nav-menu__button">
+                            <i class="las la-times text-light-gray text-large"></i>
+                        </button>
+                    </form>
+                ) : (null) }
+                <div className="nav-links-desktop">
+                    { isSearching === false ? (
+                        <div
+                            onClick={ toggleIsSearching }
+                            className="flex justify-content-center align-items-center cursor-pointer hover-rectangle position-relative px-1">
+                            <i className="las la-search rotate-90deg"></i>
+
+                            <div className="yellow-rectangle"></div>
+                        </div>
+                    ) :(null) }
 
                     <div className="flex justify-content-center align-items-center mx-3 cursor-pointer">
                         <i className="las la-globe"></i>
