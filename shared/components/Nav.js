@@ -15,7 +15,7 @@ const Nav = () => {
 
     return (
         <nav className="nav flex align-items-center justify-content-between pl-2">
-            <div>
+            <div className="flex align-items-center h-100">
                 <Link href="/">
                     <a title="epic games logo">
                         <Image
@@ -37,9 +37,46 @@ const Nav = () => {
                             alt="fortnite logo" />
                     </a>
                 </Link>
+
+                <ul className="nav-links-desktop ml-2 h-100">
+                    <li className="nav-link-desktop position-relative">
+                        <div className="text-small cursor-pointer text-uppercase text-gray py-1 px-2 h-100 flex justify-content-center align-items-center">
+                            modes
+                        </div>
+                        <div className="yellow-rectangle"></div>
+                    </li>
+                    <li className="nav-link-desktop position-relative">
+                        <a
+                            className="text-small text-uppercase text-gray py-1 px-2 h-100 flex justify-content-center align-items-center" 
+                            href="/">
+                            battle pass
+                        </a>
+                        <div className="yellow-rectangle"></div>
+                    </li>
+                </ul>
             </div>
 
             <div className="flex h-100">
+                <div className="nav-links-desktop">
+                    <div className="flex justify-content-center align-items-center cursor-pointer hover-rectangle position-relative px-1">
+                        <i className="las la-search rotate-90deg"></i>
+
+                        <div className="yellow-rectangle"></div>
+                    </div>
+
+                    <div className="flex justify-content-center align-items-center mx-3 cursor-pointer">
+                        <i className="las la-globe"></i>
+                    </div>
+
+                    <div className="flex justify-content-center align-items-center cursor-pointer mr-2">
+                        <div className="position-relative">
+                            <i className="las la-user"></i>
+                            <div className="user-status"></div>
+                        </div>
+
+                        <span className="text-small text-gray text-uppercase ml-1">sign in</span>
+                    </div>
+                </div>
                 <Link href="/">
                     <a className="download-link flex">
                         download
