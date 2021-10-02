@@ -88,12 +88,20 @@
     font-size: 16px;
 }
 
+.text-large {
+    font-size: 21px;
+}
+
 .text-uppercase {
     text-transform: uppercase;
 }
 
 .text-gray {
     color: $gray;
+}
+
+.text-light-gray {
+    color: $light-gray;
 }
 
 .position-relative {
