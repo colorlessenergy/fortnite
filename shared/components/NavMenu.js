@@ -88,7 +88,7 @@ const NavMenu = ({ isNavMenuOpen }) => {
 				</button>
 			</form>
 
-			<div className="cursor-pointer flex bt-1-black-3">
+			<div className="cursor-pointer flex bt-1-black-4">
 				<div className="nav-menu__sign-in py-1 flex justify-content-center align-items-center">
 					<div className="position-relative">
 						<i className="las la-user"></i>

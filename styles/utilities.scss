@@ -108,8 +108,8 @@
     position: relative;
 }
 
-.bt-1-black-3 {
-    border-top: 1px solid $black-3;
+.bt-1-black-4 {
+    border-top: 1px solid $black-4;
 }
 
 .cursor-pointer {
@@ -124,10 +124,10 @@
     width: 10%;
 }
 
-.background-black-3-hover {
+.background-black-4-hover {
     transition: 0.3s background-color ease-in-out;
 }
 
-.background-black-3-hover:hover {
-    background-color: $black-3;
+.background-black-4-hover:hover {
+    background-color: $black-4;
 }

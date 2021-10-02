@@ -124,14 +124,14 @@ const Nav = () => {
                             autoComplete="off"
                             placeholder="Search..." />
 
-                        <button className="nav-menu__button background-black-3-hover w-10">
+                        <button className="nav-menu__button background-black-4-hover w-10">
                             <i className="las la-search text-light-gray text-large rotate-90deg"></i>
                         </button>
 
                         <button
                             type="button"
                             onClick={ toggleIsSearching }
-                            className="nav-menu__button background-black-3-hover w-10">
+                            className="nav-menu__button background-black-4-hover w-10">
                             <i class="las la-times text-light-gray text-large"></i>
                         </button>
                     </form>
