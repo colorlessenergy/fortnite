@@ -132,10 +132,6 @@
 	background-color: #393939;
 }
 
-.nav-menu__button i {
-	transform: rotate(-90deg);
-}
-
 .nav-menu__sign-in {
 	border-right: 1px solid $black-3;
 	width: 70%;
@@ -151,4 +147,25 @@
 	left: 16px;
 
 	background-color: $black;
+}
+
+.yellow-rectangle {
+	height: 0;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	background-color: $yellow;
+	transition: height 0.2s ease-in-out;
+}
+
+.nav-link-desktop:hover a,
+.nav-link-desktop:hover div {
+	color: #ffffff;
+}
+
+.nav-link-desktop:hover .yellow-rectangle,
+.hover-rectangle:hover .yellow-rectangle {
+	height: 5px;
 }
