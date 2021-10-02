@@ -132,7 +132,7 @@ const Nav = () => {
                             type="button"
                             onClick={ toggleIsSearching }
                             className="nav-menu__button background-black-4-hover w-10">
-                            <i class="las la-times text-light-gray text-large"></i>
+                            <i className="las la-times text-light-gray text-large"></i>
                         </button>
                     </form>
                 </div>
