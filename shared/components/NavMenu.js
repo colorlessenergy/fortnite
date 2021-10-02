@@ -1,5 +1,48 @@
 import { useState } from "react";
 
+const links = [
+    {
+        id: 1,
+        link: '/',
+        text: 'battle pass'
+    },
+    {
+        id: 2,
+        link: '/',
+        text: 'crew'
+    },
+    {
+        id: 3,
+        link: '/',
+        text: 'v-bucks'
+    },
+    {
+        id: 4,
+        link: '/',
+        text: 'competitive'
+    },
+    {
+        id: 5,
+        link: '/',
+        text: 'news'
+    },
+    {
+        id: 6,
+        link: '/',
+        text: 'merch'
+    },
+    {
+        id: 7,
+        link: '/',
+        text: 'cosplay'
+    },
+    {
+        id: 8,
+        link: '/',
+        text: 'help'
+    }
+];
+
 const NavMenu = ({ isNavMenuOpen }) => {
 	const [ isNavMenuInnerOpen, setIsNavMenuInnerOpen ] = useState(false);
 	const toggleNavMenuInner = () => {
@@ -17,13 +60,17 @@ const NavMenu = ({ isNavMenuOpen }) => {
 					</div>
 					<i className="las la-angle-right"></i>
 				</li>
-				<li>
-					<a
-						className="text text-uppercase text-gray py-1 px-3 nav-menu__item" 
-						href="/">
-						battle pass
-					</a>
-				</li>
+				{ links.map(link => {
+					return (
+						<li key={ link.id }>
+							<a
+								className="text text-uppercase text-gray py-1 px-3 nav-menu__item" 
+								href={ link.link }>
+								{ link.text }
+							</a>
+						</li>
+					)
+				}) }
 			</ul>
 
 			<form className="nav-menu__form flex align-items-center justify-content-center">

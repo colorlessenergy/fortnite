@@ -7,6 +7,49 @@ import NavMenu from './NavMenu';
 import epicGamesLogo from '/public/assets/epic-games-logo.png';
 import fortniteLogo from '/public/assets/fortnite-logo.png';
 
+const links = [
+    {
+        id: 1,
+        link: '/',
+        text: 'battle pass'
+    },
+    {
+        id: 2,
+        link: '/',
+        text: 'crew'
+    },
+    {
+        id: 3,
+        link: '/',
+        text: 'v-bucks'
+    },
+    {
+        id: 4,
+        link: '/',
+        text: 'competitive'
+    },
+    {
+        id: 5,
+        link: '/',
+        text: 'news'
+    },
+    {
+        id: 6,
+        link: '/',
+        text: 'merch'
+    },
+    {
+        id: 7,
+        link: '/',
+        text: 'cosplay'
+    },
+    {
+        id: 8,
+        link: '/',
+        text: 'help'
+    }
+];
+
 const Nav = () => {
     const [ isHamburgerMenuOpen, setIsHamburgerMenuOpen ] = useState(false);
     const handleHamburgerMenuClick = () => {
@@ -45,14 +88,20 @@ const Nav = () => {
                         </div>
                         <div className="yellow-rectangle"></div>
                     </li>
-                    <li className="nav-link-desktop position-relative">
-                        <a
-                            className="text-small text-uppercase text-gray py-1 px-2 h-100 flex justify-content-center align-items-center" 
-                            href="/">
-                            battle pass
-                        </a>
-                        <div className="yellow-rectangle"></div>
-                    </li>
+                    { links.map(link => {
+                        return (
+                            <li
+                                key={ link.id }
+                                className="nav-link-desktop position-relative">
+                                <a
+                                    className="text-small text-uppercase text-gray py-1 px-2 h-100 flex justify-content-center align-items-center" 
+                                    href={ link.link }>
+                                    { link.text }
+                                </a>
+                                <div className="yellow-rectangle"></div>
+                            </li>
+                        );
+                    }) }
                 </ul>
             </div>
 
