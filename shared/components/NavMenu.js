@@ -37,7 +37,7 @@ const NavMenu = ({ isNavMenuOpen }) => {
 					placeholder="Search..." />
 
 				<button className="nav-menu__button">
-					<i className="las la-search"></i>
+					<i className="las la-search rotate-90deg"></i>
 				</button>
 			</form>
 
