@@ -172,3 +172,18 @@
 .hover-rectangle:hover .yellow-rectangle {
 	height: 5px;
 }
+
+.desktop-nav-search {
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	width: 0;
+
+	transition: opacity 0.3s ease-in-out,
+		width 0.3s ease-in-out;
+}
+
+.desktop-nav-search--animate {
+	width: 400px;
+	opacity: 1;
+}
