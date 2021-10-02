@@ -113,8 +113,8 @@ const Nav = () => {
             </div>
 
             <div className="flex h-100">
-                { isSearching ? (
-                    <form className="flex align-items-center justify-content-center">
+                <div className="position-relative flex align-items-center">
+                    <form className={`flex align-items-center justify-content-center desktop-nav-search ${ isSearching ? ("desktop-nav-search--animate") : ("") }`}>
                         <label className="d-none" htmlFor="search">
                             search
                         </label>
@@ -124,18 +124,18 @@ const Nav = () => {
                             autoComplete="off"
                             placeholder="Search..." />
 
-                        <button className="nav-menu__button">
+                        <button className="nav-menu__button background-black-3-hover w-10">
                             <i className="las la-search text-light-gray text-large rotate-90deg"></i>
                         </button>
 
                         <button
                             type="button"
                             onClick={ toggleIsSearching }
-                            className="nav-menu__button">
+                            className="nav-menu__button background-black-3-hover w-10">
                             <i class="las la-times text-light-gray text-large"></i>
                         </button>
                     </form>
-                ) : (null) }
+                </div>
                 <div className="nav-links-desktop">
                     { isSearching === false ? (
                         <div
