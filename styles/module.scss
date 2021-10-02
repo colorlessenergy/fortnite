@@ -123,13 +123,16 @@
 }
 
 .nav-menu__button {
-	border: 1px solid #464646;
-	border-left: 0;
-	border-radius: 2px;
+	border-bottom: 1px solid #464646;
+	border-top: 1px solid #464646;
 	height: 39px;
 	width: 15%;
 
 	background-color: #393939;
+}
+
+.nav-menu__button:last-of-type {
+	border-radius: 2px;
 }
 
 .nav-menu__sign-in {
