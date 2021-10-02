@@ -1,3 +1,19 @@
 @use 'base.scss';
 @use 'module.scss';
 @use 'utilities.scss';
+
+
+.nav-links-desktop {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    .nav-menu,
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-links-desktop {
+        display: flex;
+    }
+}
