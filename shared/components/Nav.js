@@ -52,7 +52,7 @@ const links = [
 
 const Nav = () => {
     const [ isHamburgerMenuOpen, setIsHamburgerMenuOpen ] = useState(false);
-    const handleHamburgerMenuClick = () => {
+    const toggleHamburgerMenuOpen = () => {
         setIsHamburgerMenuOpen(previousIsHamburgerMenuOpen => !previousIsHamburgerMenuOpen);
     }
 
@@ -167,7 +167,7 @@ const Nav = () => {
                 </Link>
 
                 <svg
-                    onClick={ handleHamburgerMenuClick }
+                    onClick={ toggleHamburgerMenuOpen }
                     className={`${ isHamburgerMenuOpen ? "animate-hamburger-menu" : "" } px-1 hamburger-menu`}>
                     <rect className="hamburger-menu__rectangle"></rect>
                     <rect className="hamburger-menu__rectangle"></rect>
@@ -176,6 +176,12 @@ const Nav = () => {
             </div>
 
 			<NavMenu isNavMenuOpen={ isHamburgerMenuOpen } />
+
+            { isHamburgerMenuOpen ? (
+                <div
+                    onClick={ toggleHamburgerMenuOpen }
+                    className="overlay"></div>
+            ) : (null) }
         </nav>
     );
 }
