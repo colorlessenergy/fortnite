@@ -163,6 +163,47 @@
 	transition: height 0.2s ease-in-out;
 }
 
+.yellow-polygon {
+	padding: 3px 24px 9.3px 24px;
+
+	background-color: $yellow;
+	clip-path: polygon(0% 16%, 100% 6%, 98% 100%, 2% 90%);
+	color: #000000;
+	line-height: 2;
+}
+
+.carousel__background-image {
+	height: 100%;
+	position: relative;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+}
+
+.carousel__background-image-1 {
+	background-image: url(/assets/carousel/image-1-mobile.jpg)
+}
+
+.carousel__background-image-2 {
+	background-image: url(/assets/carousel/image-2-mobile.jpg);
+}
+
+.carousel__season-logo {
+	position: absolute;
+	left: 30px;
+	top: 30px
+}
+
+.carousel__cubed-logo {
+	max-width: 600px;
+	width: 60%;
+}
+
+.carousel__item-padding {
+	padding: 50px 0 90px 0;
+}
+
 .nav-link-desktop:hover a,
 .nav-link-desktop:hover div {
 	color: #ffffff;
