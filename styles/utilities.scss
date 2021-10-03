@@ -197,3 +197,14 @@
 
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
