@@ -7,6 +7,28 @@
     display: none;
 }
 
+@media (min-width: 800px) {
+    .carousel__background-image-1 {
+        background-image: url(/assets/carousel/image-1.jpg)
+    }
+
+    .carousel__background-image-2 {
+        background-image: url(/assets/carousel/image-2.jpg);
+    }
+
+    .carousel__second-wrapper {
+        width: 45%;
+    }
+
+    .justify-content-end-desktop {
+        justify-content: flex-end;
+    }
+
+    .flex-direction-row-desktop {
+        flex-direction: row;
+    }
+}
+
 @media (min-width: 1228px) {
     .nav-menu,
     .hamburger-menu {
