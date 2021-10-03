@@ -1,13 +1,21 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import Nav from '../shared/components/Nav';
 import Carousel from '../shared/components/Carousel/Carousel';
+import YouTubePlayerModal from '../shared/components/YouTubePlayerModal/YouTubePlayerModal';
 
 import seasonLogo from '../public/assets/carousel/season-logo.png';
 
 export default function Home () {
+    const [ isYouTubePlayerModalOpen, setIsYouTubePlayerModalOpen ] = useState(false);
+    const toggleYoutubePlayerModal = (event) => {
+        event.stopPropagation();
+        setIsYouTubePlayerModalOpen(previousIsYoutubePlayerModalOpen => !previousIsYoutubePlayerModalOpen);
+    }
+
     return (
         <div>
             <Head>
@@ -40,8 +48,10 @@ export default function Home () {
                                         alt="cubed logo" /> 
                                 </div>
                                 <div className="flex flex-direction-column align-items-center flex-direction-row-desktop mt-1">
-                                    <div className="flex align-items-center">
-                                        <div>
+                                    <div
+                                        onClick={ toggleYoutubePlayerModal }
+                                        className="flex align-items-center">
+                                        <div className="cursor-pointer">
                                             watch trailer
                                         </div>
                                         <button className="play-video-circle">
@@ -89,6 +99,12 @@ export default function Home () {
                         </div>
                     ]
                 } />
+
+                { isYouTubePlayerModalOpen ? (
+                    <YouTubePlayerModal
+                        toggleYoutubePlayerModal={ toggleYoutubePlayerModal }
+                        link="https://www.youtube-nocookie.com/embed/2lBFoxLvYHs" />
+                ) : (null) } 
             </div>
         </div>
     );
