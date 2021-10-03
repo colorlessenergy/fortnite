@@ -33,6 +33,7 @@ const Carousel = ({ elements }) => {
                 { elements.map((element, index) => {
                     return (
                         <div
+                            key={ index }
                             onClick={ () => handleCarouselNavigationClick(index) }
                             className={`${ classes["carousel__navigation-item"] } ${ activeNavigationItem === index ? (classes["carousel__navigation-item--active"]) : ("")  }`}></div>
                     );
