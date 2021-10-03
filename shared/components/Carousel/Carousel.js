@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import classes from './Carousel.module.scss';
 
@@ -6,12 +6,43 @@ const Carousel = ({ elements }) => {
     const carouselRef = useRef(null);
     
     const [ activeNavigationItem, setActiveNavigationItem ] = useState(0);
-    const handleCarouselNavigationClick = (index) => {
+    const handleCarouselNavigationClick = (moveTo) => {
+        if (intervalIDRef.current) {
+            clearInterval(intervalIDRef.current);
+            moveCarouselInterval();
+        }
+
         const widthOfCarousel = document.body.clientWidth;
-        const setCarouselTo = index * widthOfCarousel;
+        const setCarouselTo = moveTo * widthOfCarousel;
         carouselRef.current.style.transform = `translateX(-${ setCarouselTo }px)`;
-        setActiveNavigationItem(index);
+        setActiveNavigationItem(moveTo);
     }
+
+    const intervalIDRef = useRef();
+    const moveCarouselInterval = () => {
+        const intervalID = setInterval(() => {
+            setActiveNavigationItem(previousActiveNavigationItem => {
+                if (previousActiveNavigationItem < elements.length-1) {
+                    handleCarouselNavigationClick(previousActiveNavigationItem + 1)
+                } else if (previousActiveNavigationItem === elements.length-1) {
+                    handleCarouselNavigationClick(0)
+                }
+
+                return previousActiveNavigationItem;
+            });    
+        }, 5000);
+
+        intervalIDRef.current = intervalID;
+
+        return intervalID;
+    }
+
+    useEffect(() => {
+        const intervalID = moveCarouselInterval();
+
+        return () => clearInterval(intervalID);
+    }, []);
+
     
     return (
         <div className="position-relative">
