@@ -213,21 +213,39 @@
 
 .article {
 	display: block;
-	
-	background-color: $gray;
+	position: relative;
 	width: 100%;
-}
-
-.article--full-width .article__thumbnail {
-	height: 230px;
+	
+	background-color: #f9f9f9;
+	overflow: hidden;
 }
 
 .article__thumbnail {
     height: 40vh;
     width: 100%;
+	position: relative;
 
     background-size: cover;
     background-repeat: no-repeat;
+	overflow: hidden
+}
+
+.article--background-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+	transition: 0.3s transform ease-in-out;
+}
+
+
+.article--background-image:hover {
+	transform: scale(1.05);
 }
 
 .nav-link-desktop:hover a,
