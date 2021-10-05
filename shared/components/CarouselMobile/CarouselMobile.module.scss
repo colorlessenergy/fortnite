@@ -1,0 +1,34 @@
+.carousel__navigation {
+    text-align: center;
+}
+
+.carousel__navigation-button {
+    border: 2px solid #000;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    padding: 2px;
+}
+
+.carousel__navigation-button:disabled {
+    opacity: 0.3;
+}
+
+.carousel__navigation-button:first-of-type {
+    margin-right: 24px;
+}
+
+.carousel__navigation-button i {
+    color: #000000;
+}
+
+.carousel {
+    display: flex;
+    margin-left: 30px;
+
+    transition: 0.4s transform ease-in-out;
+}
+
+.carousel__item {
+    margin-right: 20px;
+    min-width: 80%;
+}
