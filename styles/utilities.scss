@@ -81,6 +81,11 @@
     margin-bottom: $space-medium;
 }
 
+.py-05 {
+    padding-top: $space-05;
+    padding-bottom: $space-05;
+}
+
 .p-1 {
     padding-top: $space-small;
     padding-right: $space-small;
@@ -98,6 +103,11 @@
 .py-1 {
     padding-top: $space-small;
     padding-bottom: $space-small;
+}
+
+.py-8 {
+    padding-top: $space-8;
+    padding-bottom: $space-8;
 }
 
 .px-1 {
@@ -142,6 +152,10 @@
 
 .text-large {
     font-size: 21px;
+}
+
+.text-4 {
+    font-size: 24px;
 }
 
 .text-extra-large {
@@ -259,4 +273,18 @@
     z-index: 1;
 
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.button-white {
+    border: 4px solid #000000;
+    display: inline-block;
+
+    transition: 0.3s all ease-in-out;
+}
+
+.button-white:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transform: skewX(-5deg);
 }
