@@ -6,10 +6,21 @@ import Link from 'next/link';
 import Nav from '../shared/components/Nav';
 import Carousel from '../shared/components/Carousel/Carousel';
 import YouTubePlayerModal from '../shared/components/YouTubePlayerModal/YouTubePlayerModal';
+import CarouselMobile from '../shared/components/CarouselMobile/CarouselMobile';
 
 import seasonLogo from '../public/assets/carousel/season-logo.png';
 
-export default function Home () {
+import client from '../shared/contentful/contentful';
+
+export async function getStaticProps() {
+    const response = await client.getEntries();
+
+    return {
+        props: { posts: response.items }
+    }
+}
+
+export default function Home ({ posts }) {
     const [ isYouTubePlayerModalOpen, setIsYouTubePlayerModalOpen ] = useState(false);
     const toggleYoutubePlayerModal = (event) => {
         event.stopPropagation();
@@ -99,6 +110,58 @@ export default function Home () {
                         </div>
                     ]
                 } />
+
+                <div className="articles-container">
+                    { posts.length ? (posts.slice(0, 2).map((post, index) => {
+                        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                        const formatDate = new Date(post.fields.published).toLocaleDateString('en-US', options);
+                        return (
+                            <Link href={`news/${ post.sys.id }`}>
+                                <a className="article">
+                                    <div
+                                        key={ post.sys.id }
+                                        className="article__thumbnail"
+                                        style={{ backgroundImage: `url(${ post.fields.image.fields.file.url })`}}>
+                                    </div>
+                                    <div className="p-1 mb-2 font-thick">
+                                        <div className="text-small letter-spacing-normal text-light-blue">
+                                            { formatDate }
+                                        </div>
+
+                                        <h2 className="m-0 text-medium line-height-1">
+                                            { post.fields.title }
+                                        </h2>
+                                    </div>
+                                </a>
+                            </Link>
+                        );
+                    })) : (null) }
+
+                    <CarouselMobile elements={ posts.length ? (posts.slice(2).map((post, index) => {
+                        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                        const formatDate = new Date(post.fields.published).toLocaleDateString('en-US', options);
+                        return (
+                            <Link href={`news/${ post.sys.id }`}>
+                                <a className="article">
+                                    <div
+                                        key={ post.sys.id }
+                                        className="article__thumbnail"
+                                        style={{ backgroundImage: `url(${ post.fields.image.fields.file.url })`}}>
+                                    </div>
+                                    <div className="p-1 mb-2 font-thick">
+                                        <div className="text-small letter-spacing-normal text-light-blue">
+                                            { formatDate }
+                                        </div>
+
+                                        <h2 className="m-0 text-medium line-height-1">
+                                            { post.fields.title }
+                                        </h2>
+                                    </div>
+                                </a>
+                            </Link>
+                        );
+                    })) : (null) } />
+                </div>
 
                 { isYouTubePlayerModalOpen ? (
                     <YouTubePlayerModal
