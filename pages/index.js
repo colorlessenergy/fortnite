@@ -27,6 +27,30 @@ export default function Home ({ posts }) {
         setIsYouTubePlayerModalOpen(previousIsYoutubePlayerModalOpen => !previousIsYoutubePlayerModalOpen);
     }
 
+    const createGetBackgroundImageWidthFunction = () => {
+        let reverseWidth = false;
+
+        return index => {
+            if ((index % 8 === 0 || index === 2) && index !== 0) {
+                reverseWidth = !reverseWidth;
+            }
+
+            console.log(index, reverseWidth)
+
+            if (index % 6 === 0 || index === 0) {
+                if (reverseWidth) return '41%';
+
+                return '56%';
+            } else if (index % 7 === 0 || index === 1) {
+                if (reverseWidth) return '56%';
+
+                return '41%';
+            }
+        }
+    }
+
+    const getBackgroundImageWidth = createGetBackgroundImageWidthFunction();
+
     return (
         <div>
             <Head>
@@ -111,24 +135,25 @@ export default function Home ({ posts }) {
                     ]
                 } />
 
-                <div className="articles-container">
-                    { posts.length ? (posts.slice(0, 2).map((post, index) => {
+                <div className="articles-container d-none-desktop">
+                    { posts.length ? (posts.slice(0, 2).map(post => {
                         const options = { year: 'numeric', month: 'long', day: 'numeric' };
                         const formatDate = new Date(post.fields.published).toLocaleDateString('en-US', options);
                         return (
-                            <Link href={`news/${ post.sys.id }`}>
-                                <a className="article">
+                            <Link
+                                key={ post.sys.id }
+                                href={`news/${ post.sys.id }`}>
+                                <a className="article mb-2">
                                     <div
-                                        key={ post.sys.id }
                                         className="article__thumbnail"
                                         style={{ backgroundImage: `url(${ post.fields.image.fields.file.url })`}}>
                                     </div>
-                                    <div className="p-1 mb-2 font-thick">
-                                        <div className="text-small letter-spacing-normal text-light-blue">
+                                    <div className="p-2 font-thick">
+                                        <div className="text-medium letter-spacing-normal text-light-blue">
                                             { formatDate }
                                         </div>
 
-                                        <h2 className="m-0 text-medium line-height-1">
+                                        <h2 className="m-0 text-large line-height-1">
                                             { post.fields.title }
                                         </h2>
                                     </div>
@@ -137,23 +162,24 @@ export default function Home ({ posts }) {
                         );
                     })) : (null) }
 
-                    <CarouselMobile elements={ posts.length ? (posts.slice(2).map((post, index) => {
+                    <CarouselMobile elements={ posts.length ? (posts.slice(2).map(post => {
                         const options = { year: 'numeric', month: 'long', day: 'numeric' };
                         const formatDate = new Date(post.fields.published).toLocaleDateString('en-US', options);
                         return (
-                            <Link href={`news/${ post.sys.id }`}>
+                            <Link
+                                key={ post.sys.id }
+                                href={`news/${ post.sys.id }`}>
                                 <a className="article">
                                     <div
-                                        key={ post.sys.id }
                                         className="article__thumbnail"
                                         style={{ backgroundImage: `url(${ post.fields.image.fields.file.url })`}}>
                                     </div>
                                     <div className="p-1 mb-2 font-thick">
-                                        <div className="text-small letter-spacing-normal text-light-blue">
+                                        <div className="text-medium letter-spacing-normal text-light-blue">
                                             { formatDate }
                                         </div>
 
-                                        <h2 className="m-0 text-medium line-height-1">
+                                        <h2 className="m-0 text-large line-height-1">
                                             { post.fields.title }
                                         </h2>
                                     </div>
@@ -161,6 +187,63 @@ export default function Home ({ posts }) {
                             </Link>
                         );
                     })) : (null) } />
+                </div>
+
+                <div className="articles-container px-8 flex-desktop justify-content-between flex-wrap d-none">
+                    { posts.length ? (posts.map((post, index) => {
+                        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                        const formatDate = new Date(post.fields.published).toLocaleDateString('en-US', options);
+                        let valueOfBackgroundImageWidth = getBackgroundImageWidth(index);
+                        
+                        if (valueOfBackgroundImageWidth) {
+                            return (
+                                <Link
+                                    key={ post.sys.id }
+                                    href={`news/${ post.sys.id }`}>
+                                    <a
+                                        className="article flex align-items-end"
+                                        style={{ height: "600px", width: valueOfBackgroundImageWidth }}>
+                                        <div
+                                            className="article--background-image"
+                                            style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .2)), url(${ post.fields.image.fields.file.url })` }}>
+                                        </div> 
+                                        <div className="position-relative p-1 mb-2 font-thick text-white">
+                                            <div className="text-medium letter-spacing-normal">
+                                                { formatDate }
+                                            </div>
+
+                                            <h2 className="m-0 text-extra-large">
+                                                { post.fields.title }
+                                            </h2>
+                                        </div>
+                                    </a>
+                                </Link>
+                            );
+                        }
+
+                        return (
+                            <Link
+                                key={ post.sys.id }
+                                href={`news/${ post.sys.id }`}>
+                                <a className="article my-2">
+                                    <div className="article__thumbnail">
+                                        <div
+                                            className="article--background-image"
+                                            style={{ backgroundImage: `url(${ post.fields.image.fields.file.url })`}}></div>
+                                    </div>
+                                    <div className="p-1 mb-2 font-thick">
+                                        <div className="text-medium letter-spacing-normal text-light-blue">
+                                            { formatDate }
+                                        </div>
+
+                                        <h2 className="m-0 text-large line-height-1">
+                                            { post.fields.title }
+                                        </h2>
+                                    </div>
+                                </a>
+                            </Link>
+                        );
+                    })) : (null) }
                 </div>
 
                 { isYouTubePlayerModalOpen ? (
