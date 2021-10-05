@@ -27,6 +27,18 @@
     .flex-direction-row-desktop {
         flex-direction: row;
     }
+
+    .d-none-desktop {
+        display: none;
+    }
+    
+    .flex-desktop {
+        display: flex;
+    }
+
+    .article {
+        width: 24%;
+    }
 }
 
 @media (min-width: 1228px) {
