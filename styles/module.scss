@@ -205,6 +205,31 @@
 	padding: 50px 0 90px 0;
 }
 
+.articles-container {
+	position: relative;
+	z-index: 1;
+	margin-top: -10px;
+}
+
+.article {
+	display: block;
+	
+	background-color: $gray;
+	width: 100%;
+}
+
+.article--full-width .article__thumbnail {
+	height: 230px;
+}
+
+.article__thumbnail {
+    height: 40vh;
+    width: 100%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .nav-link-desktop:hover a,
 .nav-link-desktop:hover div {
 	color: #ffffff;
