@@ -246,6 +246,14 @@ export default function Home ({ posts }) {
                     })) : (null) }
                 </div>
 
+                <div className="text-center py-8">
+                    <Link href="all-news">
+                        <a className="py-05 px-3 text-4 font-thick text-center button-white text-uppercase">
+                            all news
+                        </a>
+                    </Link>
+                </div>
+
                 { isYouTubePlayerModalOpen ? (
                     <YouTubePlayerModal
                         toggleYoutubePlayerModal={ toggleYoutubePlayerModal }
