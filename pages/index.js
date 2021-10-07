@@ -110,7 +110,7 @@ export default function Home ({ posts }) {
                                     alt="season logo" /> 
                             </div>
 
-                            <div className="drop-shadow-pink h-100 flex flex-direction-column justify-content-center align-items-end font-thick text-uppercase color-white carousel-padding">
+                            <div className="drop-shadow-pink h-100 flex flex-direction-column justify-content-center font-thick text-uppercase color-white carousel-padding">
                                 <div className="text-center carousel__second-wrapper">
                                     <div className="font-italic text-large mb-1">
                                         season 8
