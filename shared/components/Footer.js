@@ -64,6 +64,10 @@ const links = [
 ];
 
 const Footer = () => {
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     return (
         <footer className="footer">
             <div className="flex justify-content-between align-items-center">
@@ -104,9 +108,11 @@ const Footer = () => {
                         </a>
                     </Link>
                 </div>
-                <div className="footer__scroll-up">
+                <button
+                    onClick={ scrollToTop }
+                    className="footer__scroll-up">
                     <i className="las la-angle-up"></i>
-                </div>
+                </button>
             </div>
             <div className="flex-desktop justify-content-between-desktop align-items-center-desktop">
                 <div className="flex flex-wrap w-50 mt-2">
