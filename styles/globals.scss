@@ -1,7 +1,7 @@
 @use 'base.scss';
 @use 'module.scss';
 @use 'utilities.scss';
-
+@use 'variables' as *;
 
 .nav-links-desktop {
     display: none;
@@ -20,6 +20,18 @@
         width: 45%;
     }
 
+    .flex-desktop {
+        display: flex;
+    }
+
+    .align-items-center-desktop {
+        align-items: center;
+    }
+
+    .justify-content-between-desktop {
+        justify-content: space-between;
+    }
+
     .justify-content-end-desktop {
         justify-content: flex-end;
     }
@@ -30,6 +42,10 @@
 
     .flex-direction-row-desktop {
         flex-direction: row;
+    }
+
+    .d-block-desktop {
+        display: block;
     }
 
     .d-none-desktop {
@@ -56,16 +72,33 @@
         width: 25%
     }
 
-    .d-none-desktop {
-        display: none;
-    }
-
-    .d-block-desktop {
-        display: block;
-    }
-
     .legal-text {
         left: 100px;
+    }
+
+    .w-20-desktop {
+        width: 20%;
+    }
+
+    .w-50-desktop {
+        width: 50%;
+    }
+
+    .mx-0-desktop {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .mr-1-desktop {
+        margin-right: $space-small;
+    }
+
+    .mr-2-desktop {
+        margin-right: $space-medium;
+    }
+
+    .mb-0-desktop {
+        margin-bottom: 0;;
     }
 }
 
