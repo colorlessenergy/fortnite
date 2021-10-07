@@ -39,6 +39,30 @@
     .article {
         width: 24%;
     }
+
+    .fortnite-wallpaper__content {
+        top: 55%;
+    }
+
+    .fortnite-wallpaper__fortnite-logo {
+        width: 12%
+    }
+
+    .fortnite-wallpaper__cubed-logo {
+        width: 25%
+    }
+
+    .d-none-desktop {
+        display: none;
+    }
+
+    .d-block-desktop {
+        display: block;
+    }
+
+    .legal-text {
+        left: 100px;
+    }
 }
 
 @media (min-width: 1228px) {

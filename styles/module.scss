@@ -248,6 +248,19 @@
 	transform: scale(1.05);
 }
 
+.fortnite-wallpaper__content {
+	position: absolute;
+	top: 50%;
+}
+
+.fortnite-wallpaper__fortnite-logo {
+	width: 30%
+}
+
+.fortnite-wallpaper__cubed-logo {
+	width: 80%
+}
+
 .nav-link-desktop:hover a,
 .nav-link-desktop:hover div {
 	color: #ffffff;
