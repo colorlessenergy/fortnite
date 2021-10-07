@@ -124,7 +124,7 @@ export default function Home ({ posts }) {
                                             battle pass
                                         </div>
                                         <Link href="/">
-                                            <a className="yellow-polygon">
+                                            <a className="yellow-polygon text-large">
                                                 play free now!
                                             </a>
                                         </Link>
@@ -252,6 +252,39 @@ export default function Home ({ posts }) {
                             all news
                         </a>
                     </Link>
+                </div>
+                <div className="position-relative">
+                    <img
+                        src="/assets/fortnite-wallpaper-desktop.jpg"
+                        alt="fortnite chapter 2 season 8 promotional poster"
+                        className="w-100 d-none d-block-desktop" />
+
+                    <img 
+                        src="/assets/fortnite-wallpaper.png"
+                        alt="fortnite chapter 2 season 8 promotional poster"
+                        className="w-100 d-none-desktop" />
+                    <div className="fortnite-wallpaper__content flex flex-direction-column align-items-center w-100">
+                        <img
+                            src="/assets/fortnite-logo.png"
+                            alt="fortnite logo"
+                            className="fortnite-wallpaper__fortnite-logo mb-1" />
+                        <img
+                            src="/assets/carousel/cubed-logo.png"
+                            alt="cubed logo"
+                            className="fortnite-wallpaper__cubed-logo" />
+
+                        <div className="font-italic font-thick text-extra-large">
+                            battle pass
+                        </div>
+                        <Link href="/">
+                            <a className="yellow-polygon font-thick text-large">
+                                play free now!
+                            </a>
+                        </Link>
+                    </div>
+                    <div className="legal-text">
+                        © & ™ 2021 MARVEL. ©2021 CPII. All Rights Reserved.
+                    </div>
                 </div>
 
                 { isYouTubePlayerModalOpen ? (
