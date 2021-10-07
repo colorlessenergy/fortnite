@@ -265,6 +265,29 @@
 	width: 80%
 }
 
+.footer {
+	border-top: 1px solid $light-gray;
+	margin-top: -10px;
+	padding: 24px;
+
+	background-color: $black-2;
+}
+
+.socials i {
+	font-size: 35px;
+}
+
+.footer__scroll-up {
+	border: 2px solid $light-gray;
+	padding: 2px;
+
+	cursor: pointer;
+}
+
+.footer__link {
+	line-height: 25px;
+}
+
 .nav-link-desktop:hover a,
 .nav-link-desktop:hover div {
 	color: #ffffff;
