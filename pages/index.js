@@ -54,8 +54,8 @@ export default function Home ({ posts }) {
     return (
         <div>
             <Head>
-                <title>fortnite</title>
-                <meta name="description" content="fortnite" />
+                <title>Fortnite | Free-to-Play Cross-Platform Game</title>
+                <meta name="description" content="Fortnite is a free-to-play Battle Royale game with numerous game modes for every type of game player. Watch a concert, build an island or fight." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
