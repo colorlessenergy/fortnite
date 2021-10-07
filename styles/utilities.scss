@@ -232,6 +232,10 @@
     position: relative;
 }
 
+.z-index-3 {
+    z-index: 3;
+}
+
 .bt-1-black-4 {
     border-top: 1px solid $black-4;
 }
@@ -314,11 +318,11 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 60px;
+    top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .overflow-y-hidden {
