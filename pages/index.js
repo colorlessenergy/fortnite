@@ -65,7 +65,9 @@ export default function Home ({ posts }) {
 
                 <Carousel elements={
                     [
-                        <div className="carousel__background-image carousel__background-image-1">
+                        <div
+                            key={ 0 }
+                            className="carousel__background-image carousel__background-image-1">
                             <div className="carousel__season-logo">
                                 <Image
                                     src={ seasonLogo }
@@ -102,7 +104,9 @@ export default function Home ({ posts }) {
                                 </div>
                             </div>
                         </div>,
-                        <div className="carousel__background-image carousel__background-image-2">
+                        <div
+                            key={ 1 }
+                            className="carousel__background-image carousel__background-image-2">
                             <div className="carousel__season-logo">
                                 <Image
                                     src={ seasonLogo }
