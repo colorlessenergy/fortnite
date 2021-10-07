@@ -26,6 +26,8 @@ export default function Home ({ posts }) {
     const toggleYoutubePlayerModal = (event) => {
         event.stopPropagation();
         setIsYouTubePlayerModalOpen(previousIsYoutubePlayerModalOpen => !previousIsYoutubePlayerModalOpen);
+
+        document.body.classList.toggle('overflow-y-hidden');
     }
 
     const createGetBackgroundImageWidthFunction = () => {
