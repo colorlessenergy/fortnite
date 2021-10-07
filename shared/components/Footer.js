@@ -74,44 +74,44 @@ const Footer = () => {
                 <div className="socials text-light-gray">
                     <Link href="/">
                         <a>
-                            <i className="lab la-facebook-square"></i>
+                            <i className="lab la-facebook-square color-yellow-hover"></i>
                         </a>
                     </Link>
                     <Link href="/">
                         <a>
-                            <i className="lab la-twitter"></i>
+                            <i className="lab la-twitter color-yellow-hover"></i>
                         </a>
                     </Link>
                     <Link href="/">
                         <a>
-                            <i className="lab la-twitch"></i>
+                            <i className="lab la-twitch color-yellow-hover"></i>
                         </a>
                     </Link>
                     <Link href="/">
                         <a>
-                            <i className="lab la-youtube"></i>
+                            <i className="lab la-youtube color-yellow-hover"></i>
                         </a>
                     </Link>
                     <Link href="/">
                         <a>
-                            <i className="lab la-instagram"></i>
+                            <i className="lab la-instagram color-yellow-hover"></i>
                         </a>
                     </Link>
                     <Link href="/">
                         <a>
-                            <i className="lab la-snapchat-ghost"></i>
+                            <i className="lab la-snapchat-ghost color-yellow-hover"></i>
                         </a>
                     </Link>
                     <Link href="/">
                         <a>
-                            <i className="lab la-vk"></i>
+                            <i className="lab la-vk color-yellow-hover"></i>
                         </a>
                     </Link>
                 </div>
                 <button
                     onClick={ scrollToTop }
-                    className="footer__scroll-up">
-                    <i className="las la-angle-up"></i>
+                    className="footer__scroll-up b-yellow-hover">
+                    <i className="las la-angle-up color-yellow-hover"></i>
                 </button>
             </div>
             <div className="flex-desktop justify-content-between-desktop align-items-center-desktop">
@@ -121,7 +121,7 @@ const Footer = () => {
                             return (
                                 <li key={ link.id }>
                                     <a
-                                        className="text text-gray letter-spacing-normal footer__link" 
+                                        className="text text-gray letter-spacing-normal color-yellow-hover footer__link " 
                                         href={ link.link }>
                                         { link.text }
                                     </a>
@@ -135,7 +135,7 @@ const Footer = () => {
                             return (
                                 <li key={ link.id }>
                                     <a
-                                        className="text text-gray letter-spacing-normal footer__link" 
+                                        className="text text-gray letter-spacing-normal color-yellow-hover footer__link" 
                                         href={ link.link }>
                                         { link.text }
                                     </a>
@@ -149,7 +149,7 @@ const Footer = () => {
                             return (
                                 <li key={ link.id }>
                                     <a
-                                        className="text text-gray letter-spacing-normal footer__link" 
+                                        className="text text-gray letter-spacing-normal color-yellow-hover footer__link" 
                                         href={ link.link }>
                                         { link.text }
                                     </a>
@@ -177,13 +177,13 @@ const Footer = () => {
 
             <div className="flex flex-direction-column align-items-center mt-2 flex-direction-row-desktop">
                 <Link href="/">
-                    <a className="text-light-gray text letter-spacing-normal mb-1 mr-1-desktop mb-0-desktop">
+                    <a className="text-light-gray text letter-spacing-normal mb-1 mr-1-desktop mb-0-desktop color-yellow-hover">
                         Terms of Service
                     </a>
                 </Link>
 
                 <Link href="/">
-                    <a className="text-light-gray text letter-spacing-normal">
+                    <a className="text-light-gray text letter-spacing-normal color-yellow-hover">
                         Privacy Policy
                     </a>
                 </Link>
