@@ -7,6 +7,7 @@ import Nav from '../shared/components/Nav';
 import Carousel from '../shared/components/Carousel/Carousel';
 import YouTubePlayerModal from '../shared/components/YouTubePlayerModal/YouTubePlayerModal';
 import CarouselMobile from '../shared/components/CarouselMobile/CarouselMobile';
+import Footer from '../shared/components/Footer';
 
 import seasonLogo from '../public/assets/carousel/season-logo.png';
 
@@ -34,8 +35,6 @@ export default function Home ({ posts }) {
             if ((index % 8 === 0 || index === 2) && index !== 0) {
                 reverseWidth = !reverseWidth;
             }
-
-            console.log(index, reverseWidth)
 
             if (index % 6 === 0 || index === 0) {
                 if (reverseWidth) return '41%';
@@ -72,7 +71,7 @@ export default function Home ({ posts }) {
                                     width={ 50 }
                                     alt="season logo" />
                             </div>
-                            <div className="h-100 flex flex-direction-column justify-content-between align-items-center carousel__item-padding justify-content-end-desktop font-thick text-uppercase color-white text-large">
+                            <div className="h-100 flex flex-direction-column justify-content-between align-items-center carousel__item-padding justify-content-end-desktop font-thick text-uppercase text-white text-large">
                                 <div className="w-100 text-center drop-shadow-pink">
                                     <div className="font-italic mb-1">
                                         season 8
@@ -110,7 +109,7 @@ export default function Home ({ posts }) {
                                     alt="season logo" /> 
                             </div>
 
-                            <div className="drop-shadow-pink h-100 flex flex-direction-column justify-content-center justify-content-end justify-content-center-desktop carousel__padding-bottom font-thick text-uppercase color-white">
+                            <div className="drop-shadow-pink h-100 flex flex-direction-column justify-content-center justify-content-end justify-content-center-desktop carousel__padding-bottom font-thick text-uppercase text-white">
                                 <div className="text-center carousel__second-wrapper">
                                     <div className="font-italic text-large mb-1">
                                         season 8
@@ -286,6 +285,8 @@ export default function Home ({ posts }) {
                         © & ™ 2021 MARVEL. ©2021 CPII. All Rights Reserved.
                     </div>
                 </div>
+
+                <Footer />
 
                 { isYouTubePlayerModalOpen ? (
                     <YouTubePlayerModal
