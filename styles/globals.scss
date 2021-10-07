@@ -1,0 +1,114 @@
+@use 'base.scss';
+@use 'module.scss';
+@use 'utilities.scss';
+@use 'variables' as *;
+
+.nav-links-desktop {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    .carousel__background-image-1 {
+        background-image: url(/assets/carousel/image-1.jpg)
+    }
+
+    .carousel__background-image-2 {
+        background-image: url(/assets/carousel/image-2.jpg);
+    }
+
+    .carousel__second-wrapper {
+        width: 45%;
+    }
+
+    .flex-desktop {
+        display: flex;
+    }
+
+    .align-items-center-desktop {
+        align-items: center;
+    }
+
+    .justify-content-between-desktop {
+        justify-content: space-between;
+    }
+
+    .justify-content-end-desktop {
+        justify-content: flex-end;
+    }
+
+    .justify-content-center-desktop {
+        justify-content: center;
+    }
+
+    .flex-direction-row-desktop {
+        flex-direction: row;
+    }
+
+    .d-block-desktop {
+        display: block;
+    }
+
+    .d-none-desktop {
+        display: none;
+    }
+    
+    .flex-desktop {
+        display: flex;
+    }
+
+    .article {
+        width: 24%;
+    }
+
+    .fortnite-wallpaper__content {
+        top: 55%;
+    }
+
+    .fortnite-wallpaper__fortnite-logo {
+        width: 12%
+    }
+
+    .fortnite-wallpaper__cubed-logo {
+        width: 25%
+    }
+
+    .legal-text {
+        left: 100px;
+    }
+
+    .w-20-desktop {
+        width: 20%;
+    }
+
+    .w-50-desktop {
+        width: 50%;
+    }
+
+    .mx-0-desktop {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .mr-1-desktop {
+        margin-right: $space-small;
+    }
+
+    .mr-2-desktop {
+        margin-right: $space-medium;
+    }
+
+    .mb-0-desktop {
+        margin-bottom: 0;;
+    }
+}
+
+@media (min-width: 1228px) {
+    .nav-menu,
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-links-desktop {
+        display: flex;
+    }
+}
